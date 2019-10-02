@@ -1,0 +1,24 @@
+[submodule "ecr_manager"]
+	path = ecr_manager
+	url = https://github.com/gt-health/ecr_manager.git
+	branch = master
+[submodule "ecr_postgresql"]
+	path = ecr_postgresql
+	url = https://github.com/gt-health/ecr_postgresql.git
+	branch = master
+[submodule "elr_receiver"]
+	path = elr_receiver
+	url = https://github.com/gt-health/elr_receiver.git
+	branch = master
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/gt-health/frontend.git
+	branch = master
+[submodule "pacer-index-api"]
+	path = pacer-index-api
+	url = https://github.com/gt-health/pacer-index-api.git
+	branch = master
+[submodule "ecr_jpabase"]
+	path = ecr_jpabase
+	url = https://github.com/gt-health/ecr_jpabase.git
+	branch = master
