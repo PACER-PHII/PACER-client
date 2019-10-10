@@ -18,7 +18,3 @@
 	path = pacer-index-api
 	url = https://github.com/gt-health/pacer-index-api.git
 	branch = master
-[submodule "ecr_jpabase"]
-	path = ecr_jpabase
-	url = https://github.com/gt-health/ecr_jpabase.git
-	branch = master
