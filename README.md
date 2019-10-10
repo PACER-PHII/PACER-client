@@ -8,8 +8,8 @@ ecr-manager
 | env variable         |      value                                                       |
 |----------------------|------------------------------------------------------------------|
 | JDBC_URL             |  jdbc:postgresql://ecr-postgresql:5432/ecr                       |
-| JDBC_USERNAME        |  <username>                                                      |
-| JDBC_PASSWORD        |  <password>                                                      |
+| JDBC_USERNAME        |  put_your_username                                               |
+| JDBC_PASSWORD        |  put_your_password                                               |
 | PACER_INDEX_SERVICE  |  http://pacer-index-api/1.0.0/search                             |
 
 
