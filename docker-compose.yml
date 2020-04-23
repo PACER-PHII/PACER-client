@@ -1,6 +1,6 @@
 version: '3'
 services:
-  ecr_postgresql:
+  ecr-postgresql:
     build:
       context: ./ecr_postgresql
     restart: always
@@ -11,9 +11,11 @@ services:
     volumes:
       - smartVol:/var/lib/postgresql/data
 
-  ecr_receiver:
+  elr-receiver:
     build:
-     context: ./ecr_receiver
+     context: ./elr_receiver
+    ports:
+      - "8087:8888"
     environment:
       ECR_URL: "http://ecr-manager:8080/ecr-manager/ECR"
       PARSER_MODE: "ECR"
@@ -31,10 +33,12 @@ services:
       LOCAL_PACER_SECURITY: "basic username:password"
       LOCAL_PACER_VERSION: "1.4.3"
       LOCAL_PACER_TYPE: "ECR"
+      BASIC_AUTH_USER: "pacer"
+      BASIC_AUTH_PASSWORD: "password"
 
-  ecr_manager:
+  ecr-manager:
     depends_on:
-      - ecr_postgresql
+      - ecr-postgresql
     build:
       context: ./ecr_manager
     ports:
