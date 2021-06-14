@@ -5,6 +5,14 @@ To download, git clone --recurse https://github.com/gt-health/PACER-client.git
 
 Environment variables:
 
+Howe to install using Docker composer:
+1. Configure the environment in the composer file if necessary. In most cases, you can use pre-assigned environment variables. 
+2. run the following command
+```
+> sudo docker-compose up --build -d
+```
+3. 
+
 ecr-manager
 
 | env variable         |      value                                                       |
