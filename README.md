@@ -1,6 +1,7 @@
 # PACER-client
 Client software stack for PACER. This client is designed to be deployed at the health department side where electronic lab report (ELR) is being reported. While the PACER is designed to generate electronic case report for a sexual transmitted diseases (STD), the architecture can easily reconfigured for another case reporting.
 
+To download, git clone --recurse 
 Environment variables:
 
 ecr-manager
