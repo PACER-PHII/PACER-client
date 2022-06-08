@@ -1,6 +1,11 @@
 # PACER-client
 Client software stack for PACER. This client is designed to be deployed at the health department side where electronic lab report (ELR) is being reported. While the PACER is designed to generate electronic case report for a sexual transmitted diseases (STD), the architecture can easily reconfigured for another case reporting.
 
+If you are installing on Windows, please go to https://github.com/gt-health/PACER-client-win
+
+## Prerequisite 
+There are several ways to install the PACER-client. The easiest way to install is using Docker. Please go to https://docs.docker.com/engine/ and download and install Docker engine for your linux VM.
+
 To download, git clone --recurse https://github.com/gt-health/PACER-client.git
 
 Environment variables:
