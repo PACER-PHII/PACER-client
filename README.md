@@ -6,6 +6,12 @@ If you are installing on Windows, please go to https://github.com/gt-health/PACE
 ## Prerequisite 
 There are several ways to install the PACER-client. The easiest way to install is using Docker. Please go to https://docs.docker.com/engine/ and download and install Docker engine for your linux VM.
 
+## Redhat Distriution
+If you Linux OS is Redhat, please do follows to install Docker.
+1. sudo yum update
+2. Follow instruction on https://docs.docker.com/engine/install/centos/
+3. Follow instruction on https://docs.docker.com/engine/install/linux-postinstall/
+
 To download, git clone --recurse https://github.com/gt-health/PACER-client.git
 
 Environment variables:
@@ -16,7 +22,10 @@ Howe to install using Docker composer:
 ```
 > sudo docker-compose up --build -d
 ```
-3. 
+3. To bring the docker containers down
+```
+> sudo docker-compose down
+```
 
 ecr-manager
 
