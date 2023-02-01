@@ -15,8 +15,13 @@ If you Linux OS is Redhat, please do follows to install Docker.
 To download, git clone --recurse https://github.com/gt-health/PACER-client.git
 
 There will be updates. To get the latest updates, perform the following two commands in the server.
-1. git pull
-2. . ./updateSubmodules.sh
+```
+> git pull
+```
+and
+```
+> . ./updateSubmodules.sh
+```
 
 These two commands must be run in order to get all the updates.
 
