@@ -25,9 +25,7 @@ and
 
 These two commands must be run in order to get all the updates.
 
-Environment variables:
-
-Howe to install using Docker composer:
+## Build and Deploy using Docker Composer
 1. Configure the environment in the composer file if necessary. In most cases, you can use pre-assigned environment variables. 
 2. run the following command
 ```
@@ -38,21 +36,53 @@ Howe to install using Docker composer:
 > sudo docker-compose down
 ```
 
-ecr-manager
+> **Note**
+> Bringing down the composed container will remove entire components including data in the database. 
+> Thus, if there are any data in the database that needed to be maintained, those need to be backed up.
 
-| env variable         |      value                                                       |
-|----------------------|------------------------------------------------------------------|
-| JDBC_URL             |  jdbc:postgresql://ecr-postgresql:5432/ecr                       |
-| JDBC_USERNAME        |  put_your_username                                               |
-| JDBC_PASSWORD        |  put_your_password                                               |
-| PACER_INDEX_SERVICE  |  http://pacer-index-api/1.0.0/search                             |
+## Environment Variables
+Open docker-compose.yml file to set the environment variables. The docker-composer.yml are already preconfigured to run itself with a mimnum configurations. However, it's hightly recommended to change the site-speicific information and keep them safely.
+
+## Configuration of PACER-client
+Once all components are successfully deployed, PACER-Index-API service must be configured for ELR message triggered query can be sent to the provider. From docker-compose.yml file, find a pacer-index-api component configuration section. From the ports setting (formated ####:####), the first port number is what needs to be opened on the host server and firewall for the host server. 
+
+Use the following command to open the port on the host server. For the Redhat distribution and if the port number is 8086,
+
+```
+> sudo firewall-cmd --permanent --add-port 8086/tcp
+```
+
+This will open port 8086 on the host server. After firewall (if firewall exists between user's local computer and the host server) opens the port number as well, go to the following URL from a web browser at the user's computer.  
+
+> http://<host_server_url>:8086/pacer-index-api/1.0.0/
+
+This will open the Swagger API document page where user can set up the PACER-Index-API entries. First, go to manage-api-controller section from the API document. Then, click on the "GET /pacer-index-api/1.0.0/manage" then click on "Try it out" button. If asked for username and password, use the pair that you have specified in the docker-compose.yml under pacer-index-api section.
+
+After "Try it out" button is clicked, check the response for existing pacer-index entries. If appropriate index entry is not found, new entry needs to be added. To add, click on "POST /pacer-index-api/1.0.0/manage" section. Then, click on "Try it out" button. Then, add the following content in the request body field.
+
+```
+{
+  "providerName": "John Duke",
+  "identifier": "ORDPROVIDER|P49430",
+  "pacerSource": {
+    "name": "PACER test",
+    "serverUrl": "https://musctest.hdap.gatech.edu/JobManagementSystem/List",
+    "security": {
+      "type": "basic",
+      "username": "username",
+      "password": "password"
+    },
+    "version": "1.0.0",
+    "type": "ECR"
+  }
+}
+```
+
+This will add the test entry for a testing PACER server at GTRI site. Once a partner site is identified, that end point must be added to the service.
 
 
-ecr-receiver
 
-| env variable         |      value                                                       |
-|----------------------|------------------------------------------------------------------|
-| ECR_URL              |  http://ecr-manager:8080/ecr-manager/ECR                         |
-| PARSER_MODE.         |  ECR                                                             |
-| TRANSPORT_MODE       |  MLLP                                                            |
+
+
+
 
