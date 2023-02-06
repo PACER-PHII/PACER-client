@@ -80,9 +80,36 @@ After "Try it out" button is clicked, check the response for existing pacer-inde
 
 This will add the test entry for a testing PACER server at GTRI site. Once a partner site is identified, that end point must be added to the service.
 
+## ELR Receiver testing with a testing ELR Triggering Message
+PACER-client package comes with a sample ELR message that will trigger the ECR Manager with a matching provider information in the PACER-index-api. In order to test, Java must be installed. Run the following commands to install openjdk package to Redhat.
 
+```
+> yum update -y
+> yum install java-openjdk
+> java -version
+```
 
+The last line of commands must print the version of Java if the java is successfully installed. Next, run the following command to set up the environment variable for the ELR sender to choose right file and method.
 
+```
+> . ./env_config.sh
+```
 
+This will set up the environment variable (if default has not been changed for the port number the ELR Receiver will be listening to (default: 8087). Then, next command to send the ELR message is as follow,
 
+```
+> java -jar ./elr_sender-0.0.2-jar-with-dependencies.jar
+```
 
+This command should have a response message similar to the follow,
+
+```
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Received response:
+MSH|^~\&|ELR|SPH| GT|Reliable|20230206192649.572+0000||ACK^R01^ACK|1|P|2.5.1
+MSA|AA|20070701132554000008
+
+End of response message
+```
