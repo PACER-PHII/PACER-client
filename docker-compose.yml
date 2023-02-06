@@ -5,7 +5,7 @@ services:
       context: ./ecr_postgresql
     restart: always
     ports:
-      - "5435:5432"
+      - "5432:5432"
     environment:
       ECR_USER_PASSWORD: "i3lworks"
     volumes:
