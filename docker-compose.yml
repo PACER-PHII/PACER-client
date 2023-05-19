@@ -51,6 +51,7 @@ services:
       LOCAL_PACER_SECURITY: "Basic username:password"
       LOCAL_PACER_URL: ""
       SERVER_PORT: "8080"
+      TRUST_CERT: "true"
 
 volumes:
   smartVol:
