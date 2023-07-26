@@ -15,7 +15,7 @@ services:
     build:
      context: ./elr_receiver
     ports:
-      - "8087:8888"
+      - "8087:8887"
     environment:
       ECR_URL: "http://ecr-manager:8080/ecr-manager/ECR"
       PARSER_MODE: "ECR"
