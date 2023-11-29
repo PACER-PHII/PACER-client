@@ -3,5 +3,5 @@ charset-normalizer==3.3.2
 pip==21.1.2
 requests==2.31.0
 setuptools==57.0.0
-urllib3==1.26.6
+urllib3==1.26.18
 wheel==0.36.2
