@@ -1,0 +1,70 @@
+{
+    "count": 4,
+    "created": "2023-11-29T14:58:35.705-05:00",
+    "list": [
+        {
+            "id": 1,
+            "identifier": "LOCAL_PROVIDER|1",
+            "pacerSource": {
+                "name": "LOCAL_PACER",
+                "security": {
+                    "password": "password",
+                    "type": "basic",
+                    "username": "username"
+                },
+                "serverUrl": "https://pacer-server.heat.icl.gtri.org/JobManagementSystem/List",
+                "type": "ECR",
+                "version": "1.4.3"
+            },
+            "providerName": "LOCAL PROVIDER"
+        },
+        {
+            "id": 2,
+            "identifier": "ORDPROVIDER|P49430",
+            "pacerSource": {
+                "name": "PACER test",
+                "security": {
+                    "password": "password",
+                    "type": "basic",
+                    "username": "username"
+                },
+                "serverUrl": "https://pacer-server.heat.icl.gtri.org/JobManagementSystem/List",
+                "type": "ECR",
+                "version": "1.0.0"
+            },
+            "providerName": "John Duke"
+        },
+        {
+            "id": 3,
+            "identifier": "appfac|PACERv1|GTRI",
+            "pacerSource": {
+                "name": "PACER test",
+                "security": {
+                    "password": "password",
+                    "type": "basic",
+                    "username": "username"
+                },
+                "serverUrl": "https://pacer-server.heat.icl.gtri.org/JobManagementSystem/List",
+                "type": "ECR",
+                "version": "1.0.0"
+            },
+            "providerName": ""
+        },
+        {
+            "id": 4,
+            "identifier": "appfac|CYBERLAB|City of Houston",
+            "pacerSource": {
+                "name": "PACER OCHIN test",
+                "security": {
+                    "password": "password",
+                    "type": "basic",
+                    "username": "username"
+                },
+                "serverUrl": "https://pacer.ochin.org/JobManagementSystem/List",
+                "type": "ECR",
+                "version": "1.0.0"
+            },
+            "providerName": ""
+        }
+    ]
+}
