@@ -24,7 +24,7 @@ def read_indexes():
         with open(g_index_file, "w") as pacer_index_data_file:
             json.dump(r.json(), pacer_index_data_file, indent=4, sort_keys=True)
     else:
-        print('Failed to get pacer-index-api service data content from {}'.format(url))
+        print('Failed to get pacer-index-api service data content from {}'.format(g_url))
 
 
 def push_indexes():
