@@ -10,11 +10,6 @@ g_index_file = 'pacer-index-api.json'
 g_url = 'http://localhost:8086/pacer-index-api/1.0.0/manage'
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
 def read_indexes():
     # Read all PACER server indexes.
     headers = {'Content-Type': 'application/json'}
