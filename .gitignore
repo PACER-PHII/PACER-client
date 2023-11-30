@@ -23,3 +23,6 @@ hs_err_pid*
 
 .DS_Store
 .idea
+pacer-index-data-load/.idea/misc.xml
+pacer-index-data-load/.idea/pacer-index-api-reload.iml
+pacer-index-data-load/pacer-index-api.json

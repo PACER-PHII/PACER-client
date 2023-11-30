@@ -1,18 +1,13 @@
-# This is a sample Python script.
+# -*- coding: utf-8 -*-
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+import getopt
 import json
+import sys
 
 import requests as requests
-import getopt, sys
 
 g_index_file = 'pacer-index-api.json'
 g_url = 'http://localhost:8086/pacer-index-api/1.0.0/manage'
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
 
 
 def read_indexes():
@@ -24,13 +19,13 @@ def read_indexes():
         with open(g_index_file, "w") as pacer_index_data_file:
             json.dump(r.json(), pacer_index_data_file, indent=4, sort_keys=True)
     else:
-        print('Failed to get pacer-index-api service data content from {}'.format(url))
+        print('Failed to get pacer-index-api service data content from {}'.format(g_url))
 
 
 def push_indexes():
     # read json from pacer-index-api.json file.
     with open(g_index_file, "r") as pacer_index_data_file:
-        index_data = json.load(pacer_index_data_file);
+        index_data = json.load(pacer_index_data_file)
 
     # Push index data to indexing server
     headers = {'Content-Type': 'application/json'}
@@ -48,15 +43,14 @@ if __name__ == '__main__':
     argList = sys.argv[1:]
     options = "hu:rw"
     long_opts = ["Help", "Url", "Read", "Write"]
+    is_read = False
+    is_write = False
 
     try:
         # Parsing argument
         args, vals = getopt.getopt(argList, options, long_opts)
-        is_read = False
-        is_write = False
         # checking each argument
         for currentArg, currentVal in args:
-
             if currentArg in ("-h", "--Help"):
                 print("This will read pacer-index-api service data content and write them back to the API.")
                 print("Use -r or --Read to read from Url (default http://localhost:8086/pacer-index-api/1.0.0/manage)")
